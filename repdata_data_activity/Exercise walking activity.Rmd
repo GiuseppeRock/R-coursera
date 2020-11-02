@@ -1,0 +1,173 @@
+---
+title: "Coursera reproducible research"
+author: "Giuseppe Fumarola"
+date: "2/11/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load the database
+
+The database is loaded from the local directory and stored as "activity".
+Relevant libraries are loaded
+
+```{r load database}
+activity <- read.csv("~/R/R-coursera/repdata_data_activity/activity.csv")
+library(dplyr)
+library(ggplot2)
+```
+
+## Preprocess the data
+
+The variable "date" is formatted to become an object of class "date".
+
+```{r preprocessing}
+activity$date <- as.Date(activity$date)
+```
+
+## Number of steps per day
+
+Calculate a table for total steps per day
+
+```{r table steps per day}
+dailysteps <- activity %>% group_by(date) %>% summarise(steps = sum(steps))
+dailysteps
+```
+
+## Barchart of steps per day
+
+Plotting a chart which shows the number of total steps per day
+
+```{r plot steps per day}
+daysteps <- ggplot(dailysteps, aes(x = date, y = steps))
+daysteps + geom_col() + ggtitle("Steps per day")
+```
+
+## Daily steps stats
+
+The matrix shows basic stats for daily steps
+
+```{r daily steps stats}
+mean_steps <- round(mean(dailysteps$steps, na.rm = TRUE))
+median_steps <- median(dailysteps$steps, na.rm = TRUE)
+stats_steps <- matrix(data = rbind(mean_steps, median_steps),
+                     nrow = 1, ncol = 2)
+colnames(stats_steps) <- c("Mean", "Median")
+```
+
+## Average daily activity pattern
+
+The following code creates a table with the average walking activity per time interval.
+
+```{r daily activity}
+avg_daily_activity <- activity %>% group_by(interval) %>% 
+  summarize(steps = mean(steps, na.rm = TRUE))
+```
+
+Evidence from the table is used to plot the information.
+
+```{r daily activity plot}
+avgline <- ggplot(avg_daily_activity, aes(interval, steps)) +
+           geom_line() + ggtitle("Average daily activity")
+avgline
+```
+
+The following code retrieves the most active interval of the day, on average.
+
+```{r max daily activity}
+avg_daily_activity[order(-avg_daily_activity$steps),][1,]
+```
+
+## Counting missing values
+
+It seems that the dataframe contain 2304 missing measurements of the variable "steps".
+
+```{r NA count}
+sum(is.na(activity$steps))
+```
+
+## Dealing with missing values missing values
+
+The quick analysis reported below reveals that missing values are present only in 8 specific days, where no measurements have been taken. Therefore, the best strategy to tackle this issue seems to impute to each time interval in all of these missing days the average number of steps for that time interval. The intended result is that the missing days would mirror a "standard" day.
+
+```{r NA disposition}
+nactivity <- subset(activity, is.na(steps))
+table(nactivity$date)
+```
+
+## Compiling a new database
+
+"activity2" is a copy of the original database. However, the follwing function assign a value to each and every missing value, according to the strategy described above.
+
+```{r solving NA}
+activity2 <- activity
+
+for (i in 1:dim(activity2)[1]) { 
+     if (is.na(activity2[i,1]) == TRUE) {
+         index <- match(activity2[i,3],avg_daily_activity$interval)
+         activity2[i,1] <- avg_daily_activity[index,2]
+     }
+  }
+```
+
+## Impact of filling the missing values
+
+The new bar chart shows that the procedure did not have a significant impact on the trend. The bars which still looks empty are due not anymore to missing values, but to very low values recorded in these days.
+
+```{r new bar chart}
+dailysteps2 <- activity2 %>% group_by(date) %>% summarise(steps = sum(steps))
+daysteps2 <- ggplot(dailysteps2, aes(x = date, y = steps))
+daysteps2 + geom_col() + ggtitle("Steps per day - new")
+```
+
+The new statistics confirm that mean and median activity did not suffer any impact.
+
+```{r new stats}
+mean_steps2 <- round(mean(dailysteps2$steps, na.rm = TRUE))
+median_steps2 <- median(dailysteps2$steps, na.rm = TRUE)
+stats_steps2 <- matrix(data = rbind(mean_steps2, median_steps2),nrow = 1, ncol = 2)
+colnames(stats_steps2) <- c("Mean", "Median")
+stats_steps2
+```
+
+## Create a factorial variable for weekday
+
+The following code identifies each entry as being recorded on a weekday or a weekend (saturday or sunday).
+
+```{r factorial days}
+activity2$day <- weekdays(activity2$date)
+days <- unique(activity2$day)
+
+for (i in 1:dim(activity2)[1]) 
+     {if (activity2[i,4] %in% days[1:5]) {
+         activity2[i,5] <- "weekday"} 
+      else {activity2[i,5] <- "weekend"} 
+}
+
+activity2$V5 <- as.factor(activity2$V5)
+```
+
+## Plotting weekday vs weekend
+
+The following code creates a chart to show daily activity in different days of the week.
+
+```{r plot weekdays}
+avg_wd_activity <- subset(activity2, V5 == "weekday") %>% 
+    group_by(interval) %>% summarize(steps = mean(steps, na.rm = TRUE))
+avg_wd_activity$weekpart <- "weekday"
+
+avg_we_activity <- subset(activity2, V5 == "weekend") %>% 
+    group_by(interval) %>% summarize(steps = mean(steps, na.rm = TRUE))
+avg_we_activity$weekpart <- "weekend"
+
+avg_activity <- rbind(avg_wd_activity, avg_we_activity)
+
+avgline <- ggplot(avg_activity, aes(interval, steps)) +
+ geom_line() + ggtitle("Average activity weekday or weekend") + 
+ facet_grid(weekpart ~ .)
+
+avgline
+```
