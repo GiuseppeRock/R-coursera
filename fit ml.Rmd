@@ -1,0 +1,93 @@
+---
+title: "fit"
+author: "Giuseppe Fumarola"
+date: "12/11/2020"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Fit classifier
+
+# Summary
+
+Write summary here 
+
+## Load and preprocess
+
+Data and libraries are loaded.
+Then data are preprocessed. A few variables have been excluded, since their measurements is not related to the physical activity, but rather to the device. The timestamp is parsed as its relevant class. The output variable is factorised.
+
+There are 67 variables containing missing values. Those variables are removed.
+
+33 near zero variance variables are removed as well.  They mainly belong to measures of skewness and kurtosis for other variables.
+
+The dataset is then split in train/test parts, with proportions 0.75 / 0.25.
+
+```{r load}
+library(ggplot2)
+library(caret)
+library(naniar)
+library(rattle)
+library(dplyr)
+
+rdata <- read.csv("~/R/R-coursera/pml-training.csv", row.names=1)
+
+rexercise <- read.csv("~/R/R-coursera/pml-testing.csv", row.names=1)
+
+rdata <- select(rdata, -c(2,3,5,6))
+rexercise <- select(rexercise, -c(2,3,5,6))
+
+rdata$cvtd_timestamp <- as.Date.character(rdata$cvtd_timestamp)
+
+rexercise$cvtd_timestamp <- as.Date.character(rexercise$cvtd_timestamp)
+rdata$classe <- as.factor(rdata$classe)
+
+misstable <- miss_var_summary(rdata)
+missvar <- subset(misstable, n_miss>0, variable)
+rdata <- select(rdata, - (missvar)[[1]])
+
+nzv <- nearZeroVar(rdata, saveMetrics= TRUE)
+nzvar <- row.names(filter(nzv, nzv == TRUE))
+pretrain <- select(rdata, - nzvar)
+
+inTrain = createDataPartition(rdata$classe, p = 3/4)[[1]]
+train = pretrain[inTrain,]
+test = pretrain[-inTrain,]
+```
+
+## Predictive model
+
+At first, a tree decisional model is fit to predict the outcome variable.
+The output is shown in the chart below, which also displays the main predictive factors.
+
+```{r model}
+rp <- train(classe ~ ., data = train, method = "rpart")
+fancyRpartPlot(rp$finalModel)
+```
+
+However, the accuracy of the model is quite poor, around 50%.
+Despite being much better than random guessing, which holds a predictive power of 20%, a more sophisticated random forest model is fit, to improve the results.  Nonetheless, the improvement is not very significant.
+
+```{r model2, cache = TRUE}
+rf <- train(classe ~ ., data = train, method = "rf", ntree = 100, maxnodes = 10)
+confusionMatrix(rf)
+```
+
+## Testing the model
+
+The model is finally controlled on the test dataset. 
+
+```{r test, cache = TRUE}
+prediction <- predict(rf, test)
+table(prediction, test$classe)
+
+accuracy <- sum(diag(table(prediction, test$classe))) / sum(table(prediction, test$classe))
+accuracy
+```
+
+The final model appears to have an out of sample error of almost 52% and its predictive power is much stronger for events of class A.
