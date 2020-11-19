@@ -1,0 +1,129 @@
+---
+title: "World best 50 restaurants"
+author: "Giuseppe Fumarola"
+date: "19/11/2020"
+output: ioslides_presentation
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(base)
+library(shiny)
+library(dplyr)
+library(quantmod)
+library(leaflet)
+library(plotly)
+library(tibble)
+library(curl)
+options(scipen=999)
+
+#load the data
+
+  restaurants <<- read.delim("50_best_restaurants_database.txt", na = "NA")
+  icones <<- read.table("icons.txt", quote="\"", comment.char="")
+
+
+# popups for map
+
+popups <- function() {
+  items <<- NULL
+  for (i in 1:50) {
+    first <- paste("<b>#", restaurants$Ranking[i], "-", restaurants$Restaurant[i], if (!is.na(restaurants$Stars[i])) {strrep("*", restaurants$Stars[i])}, "</b></br>")
+    second <- paste(restaurants$City[i], "-", restaurants$Country[i], "</br>")
+    third <- paste(restaurants$Description[i], "</br>")
+    fourth <- paste("Chef:", restaurants$Chef[i], "</br>")
+    fifth <- paste("Website: <a href =", restaurants$Website[i], ">", restaurants$Website[i], "</a>")
+    item <- paste(first, second, third, fourth, fifth)
+    items <<- c(items, item)
+  }}
+popups()
+
+# currencies
+
+chartrend <- function() {
+  exclist = NULL
+  for (i in unique(restaurants$Currency)) {
+    exc <- paste("EUR",i, sep = "/")
+    exclist <- c(exclist, exc)
+  }
+  exrates = NULL
+  for (i in exclist) {
+    rate <- tail(getSymbols(Symbols = i, src = "oanda", from = Sys.Date()-5, auto.assign = FALSE),1)
+    exrates <- c (exrates, rate)
+  }
+  extable <<- data.frame(currency = exclist, rate = exrates)
+
+  menu_curr = c()
+  
+  for (i in 1:50) {
+    if (restaurants$Currency[i] == "EUR") {
+      menu_curr <- c(menu_curr, restaurants$Menu[i])
+    }
+    else {
+      rateind <- which(extable$currency == paste("EUR", restaurants$Currency[i], sep = "/"))
+      menu_curr <- c(menu_curr, round(restaurants$Menu[i] / extable$rate[rateind]))
+    }
+  }
+  restaurants_new <<- restaurants %>% mutate(menu_loc = menu_curr)
+  
+  #plot
+  chart <<- with(restaurants_new, plot_ly ( 
+    x = Ranking, y = menu_curr, type = "scatter", mode = "markers", 
+    color = as.factor(Stars), marker = list(size = 12, color = "pal")) 
+    %>%
+      layout(title = "50 best restaurants 2019", 
+             xaxis = list(title = "Ranking"), 
+             yaxis = list(
+               title = "Full Tasting Menu Price (EUR)"),
+             legend=list(title=list(text='Michelin stars')))
+    %>% add_trace(text = restaurants_new$Restaurant, showlegend = F))
+}
+
+chartrend()
+
+```
+
+## Introduction
+
+This presentation will display the location of the world best 50 restaurants, based on the ranking of 2019. </br> </br>
+In the next slide, you can interact with the map to receive detailed information on specific restaurants. </br> </br>
+You can also move the slider to choose which and how many restaurants to display on the map, based on their ranking.
+
+## Interactive Map
+
+```{r map}
+inputPanel(
+   sliderInput("slider",
+                  "Ranking:",
+                  min = 1,
+                  max = 50,
+                  value = c(1,50))
+)
+
+renderLeaflet({
+  rmin = input$slider[1]
+    rmax = input$slider[2]
+    icone = list(iconUrl = icones$V1[rmin:rmax], iconWidth = 30, iconHeight = 30)
+    mappar <<- restaurants %>% leaflet() %>% addTiles() %>% addMarkers(lng = restaurants$Lon[rmin:rmax], lat = restaurants$Lat[rmin:rmax], popup = items[rmin:rmax], icon = icone, clusterOptions = markerClusterOptions(showCoverageOnHover = FALSE))
+    mappar
+})
+
+```
+
+## Scams or good deals?
+
+The chart displayed in the next slide shows that top ranking restaurants do not necessarily have higher dining expenses, so you could get very good deals! </br> </br>
+However, the price for a full tasting menu, drinks excluded, seems to be somehow linked with the numbers of Michelin stars awarded.  </br> </br>
+Please note that restaurants part of the best 50 ranking but not reviewed by the Michelin guide have been excluded from the chart.
+
+## Chart
+
+```{r chart, message=FALSE, warning=FALSE}
+
+renderPlotly(chart)
+
+```
+
+
