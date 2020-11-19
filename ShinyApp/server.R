@@ -14,7 +14,7 @@ dataload <- function() {
   fileurl2 <- "http://download1326.mediafire.com/czkusv8im2jg/3xzg45r19bo8oi9/icones.txt"
   if(!file.exists(destfile)){
     download.file(fileurl, "50_best_restaurants_database.txt")
-    download.file(fileurl2, "icones.txt")}
+    download.file(fileurl2, "icons.txt")}
   restaurants <<- read.delim("50_best_restaurants_database.txt", na = "NA")
   icones <<- read.table("icons.txt", quote="\"", comment.char="")
 }
