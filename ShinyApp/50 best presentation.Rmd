@@ -21,8 +21,17 @@ options(scipen=999)
 
 #load the data
 
+dataload <- function() {
+  destfile <- "50_best_restaurants_database.txt"
+  fileurl <- "http://download1650.mediafire.com/bdx6umcizbkg/s5w876ee6h6ckqz/50+best+restaurants+database.txt"
+  fileurl2 <- "http://download1326.mediafire.com/czkusv8im2jg/3xzg45r19bo8oi9/icones.txt"
+  if(!file.exists(destfile)){
+    download.file(fileurl, "50_best_restaurants_database.txt")
+    download.file(fileurl2, "icons.txt")}
   restaurants <<- read.delim("50_best_restaurants_database.txt", na = "NA")
   icones <<- read.table("icons.txt", quote="\"", comment.char="")
+}
+dataload()
 
 
 # popups for map
