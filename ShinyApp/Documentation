@@ -11,6 +11,5 @@ Restaurants not reviewed by Michelin have been excluded from this chart.
 
 
 You can access the presentation at this link: https://giuseppefumarola.shinyapps.io/World_50_best_restaurants_presentation/?_ga=2.35739296.1811656347.1605810716-956032856.1605810716
-You can access the webapp at this link: https://giuseppefumarola.shinyapps.io/World_50_best_app/?_ga=2.233519902.1811656347.1605810716-956032856.1605810716
-
+You can access the webapp at this link: https://giuseppefumarola.shinyapps.io/Best_50_restaurants_app/?_ga=2.242373250.1811656347.1605810716-956032856.1605810716
 However, for both of them the plotly chart does not load when accessed online, but it works if you run the file(s) in your local RStudio.
