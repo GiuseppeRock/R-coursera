@@ -8,3 +8,9 @@ The slider allows you to decide which and how many restaurants to include in the
 The chart in the second tab shows the absence of a clear relationship between the ranking and the price of a full tasting menu, drinks excluded, in Euro.
 However, there is a stronger correlation between the price level and the number of Michelin stars awarded.
 Restaurants not reviewed by Michelin have been excluded from this chart.
+
+
+You can access the presentation at this link: https://giuseppefumarola.shinyapps.io/World_50_best_restaurants_presentation/?_ga=2.35739296.1811656347.1605810716-956032856.1605810716
+You can access the webapp at this link: https://giuseppefumarola.shinyapps.io/World_50_best_app/?_ga=2.233519902.1811656347.1605810716-956032856.1605810716
+
+However, for both of them the plotly chart does not load when accessed online, but it works if you run the file(s) in your local RStudio.
