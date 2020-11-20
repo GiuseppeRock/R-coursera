@@ -48,11 +48,11 @@ chartrend <- function() {
   }
   exrates = NULL
   for (i in exclist) {
-    rate <- getSymbols(Symbols = i, src = "oanda", from = Sys.Date()-1, auto.assign = FALSE)
+    rate <- tail(getSymbols(Symbols = i, src = "oanda", from = Sys.Date()-5, auto.assign = FALSE),1)
     exrates <- c (exrates, rate)
   }
   extable <<- data.frame(currency = exclist, rate = exrates)
-
+  
   menu_curr = c()
   
   for (i in 1:50) {
