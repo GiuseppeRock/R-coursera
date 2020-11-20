@@ -1,51 +1,101 @@
-Ranking	Restaurant	City	Country	Lat	Lon	Stars	Chef	Website	Menu	Currency	Description
-1	Mirazur        	Menton	France	43.785882	7.527998	3	Mauro Colagreco	https://www.mirazur.fr/	320	EUR	Argentinaís prime culinary export serves exquisite seasonal food on the CÙte díAzur
-2	Noma                                         	Copenhagen	Denmark	55.683153	12.610426	2	RenÈ Redzepi	https://noma.dk/	2800	DKK	The restaurant that coined New Nordic cuisine is reborn with a more daring attitude than ever
-3	Etxebarri	Axpe	Spain	43.11587	-2.6006578	1	Victor Arguinzoniz	https://asadoretxebarri.com/	200	EUR	"Minimalist, accurate and artful grill cookery with premier Basque ingredients"
-4	Gaggan Anand                 	Bangkok	Thailand	13.73919	100.53744	NA	Gaggan Anand	https://gaggananand.com/	8000	THB	"A colourful, emoji-led feast from Asiaís unstoppable chef"
-5	Geranium	Copenhagen	Denmark	55.703755	12.572072	3	Rasmus Kofoed	https://www.geranium.dk/en/	2800	DKK	"Detailed, artful plates that celebrate Scandinaviaís best seasonal ingredients"
-6	Central	Lima	Peru	-12.0993	-77.065	NA	Virgilio MartÌnez and PÌa LeÛn	https://www.centralrestaurante.com.pe/	480	PEN	A showcase of colour and diversity from all over Peru
-7	Mugaritz	San Sebastian	Spain	43.314798	-1.974583	2	Andoni Luis Aduriz	https://www.mugaritz.com/	220	EUR	A string of innovative creations to challenge dinersí conceptions in the Basque countryís heart
-8	ArpËge	Paris	France	48.855703	2.317101	3	Alain Passard	https://www.alain-passard.com/	420	EUR	Vegetables are given a chance to shine under the direction of a true French master
-9	Disfrutar	Barcelona	Spain	41.387762	2.153172	2	Mateu CasaÒas	http://www.disfrutarbarcelona.com/	195	EUR	A host of brilliantly conceived surprises delivered with panache and bags of flavour
-10	Maido	Lima	Peru	-12.04318	-77.02824	NA	Mitsuharu Tsumura and Cesar Choy	http://maido.pe/	349	PEN	Lima favourite fuses Japanese and Peruvian cuisine to brilliant effect
-11	Den	Tokyo	Japan	35.670289	139.696816	NA	Zaiyu Hasegawa	http://www.jimbochoden.com/	17000	JPY	"Japanese cuisine with quality, creativity and a warm welcome (plus an ant or two)"
-12	Pujol	Mexico City	Mexico	19.371422	-99.150344	NA	Enrique Olvera	https://www.pujol.com.mx/	2500	MXN	Mexicoís most famous chef filters his countryís deep-rooted cuisine through a contemporary lens
-13	White Rabbit	Moscow	Russia	55.741469	37.615561	NA	Vladimir Mukhin	https://whiterabbitmoscow.ru/en/	11000	RUB	Boundless creativity with Russian ingredients from Moscowís most famous chef
-14	Azurmendi	Larrabetzu	Spain	43.26594	-2.8187452	3	Eneko Atxa	https://www.azurmendi.biz/	250	EUR	Innovative cuisine with sustainability at heart
-15	Septime	Paris	France	48.853604	2.380832	1	Bertrand GrÈbaut 	http://www.septime-charonne.fr/	95	EUR	Explosive flavours and unsung ingredient mashups thrive at this hip neo-bistro
-16	Alain Ducasse au Plaza AthÈnÈe	Paris	France	48.866175	2.304268	3	Alain Ducasse with Romain Meder	https://www.dorchestercollection.com/en/paris/hotel-plaza-athenee/restaurants-bars/alain-ducasse-au-plaza-athenee/	395	EUR	One of Franceís iconic chefs defines his concept of ìnaturalnessî in an opulent dining room
-17	Steirereck	Vienna	Austria	48.198674	16.348388	2	Heinz Reitbauer	https://www.steirereck.at/en/restaurant/	169	EUR	A futuristic setting showcasing trailblazing Austrian cuisine
-18	Odette	Singapore	Singapore	1.289739	103.851368	3	Julien Royer	https://www.odetterestaurant.com/	358	SGD	Ultra-refined French dining from a new-generation French chef in Asia
-19	Twins Garden	Moscow	Russia	55.741469	37.615561	NA	Ivan and Sergey Berezutski	http://twinsgarden.ru/en/	8000	RUB	Superlative home-grown produce presented by Russiaís most talented twins
-20	Tickets	Barcelona	Spain	41.375217	2.156968	1	Fran Agudo	https://elbarri.com/en/restaurant/tickets/	70	EUR	"A carnival of playful tapas delights, where not every bite is as it seems"
-21	FrantzÈn	Stockholm	Sweden	59.333854	18.058519	3	Bjorn FrantzÈn	https://www.restaurantfrantzen.com/	3500	SEK	The return of Stockholmís most creative cook sees a brand-new space and experiential menus
-22	Narisawa	Tokyo	Japan	35.692709	139.699506	NA	Yoshihiro Narisawa	http://www.narisawa-yoshihiro.com/	38500	JPY	Yoshihiro Narisawa brings nature to the plate via innovative Satoyama cuisine
-23	Cosme                  	New York	USA	40.8332	-73.40832	0	Daniela Soto-Innes	https://www.cosmenyc.com/	98	USD	Original Mexican-inspired cuisine from The Worldís Best Female Chef 2019
-24	Quintonil	Mexico City	Mexico	19.4308	-99.150344	NA	Jorge Vallejo	http://www.quintonil.com/en/	2400	MXN	A taste of pure Mexico from a talented young chef
-25	AllÈno Paris au Pavillon Ledoyen	Paris	France	48.866061	2.315677	3	Yannick AllÈno	http://www.yannick-alleno.com/	395	EUR	A tour de force of boundary pushing technique in historic Parisian surrounds
-26	BoragÛ	Santiago	Chile	-33.428532	-70.630133	NA	Rodolfo Guzm·n	https://www.borago.cl/	85000	CLP	Zero-kilometre sourcing and indigenous ingredients set apart this Chilean showstopper
-27	The Clove Club	London	UK	51.527045	-0.07915	1	Isaac McHale	https://thecloveclub.com/	145	GBP	Delicious British cuisine from a talented kitchen and dining room trio
-28	Blue Hill at Stone Barns	Tarrytown	USA	41.10208	-73.8289	2	Dan Barber	https://www.bluehillfarm.com/	195	USD	Dan Barberís progressive rural farm-restaurant serving sustainable cuisine
-29	Piazza Duomo	Alba	Italy	44.700554	8.035567	3	Enrico Crippa	https://www.piazzaduomoalba.it/it/	300	EUR	"Inventive, artistic Italian dishes matched with superb wines in truffle country"
-30	Elkano	Getaria	Spain	43.303043	-2.205062	1	Aitor Arregi with Pablo Vicari	https://www.restauranteelkano.com/	110	EUR	A near-perfect example of an authentic Basque asador
-31	Le Calandre	Rubano	Italy	45.426347	11.790589	3	Massimiliano Alajmo	https://www.alajmo.it/it/sezione/le-calandre/le-calandre	240	EUR	Contemporary Italian cuisine at a detail-driven restaurant
-32	Nerua Guggenheim Bilbao	Bilbao	Spain	43.258534	-2.937123	1	Josean Alija	https://www.neruaguggenheimbilbao.com/	148	EUR	Modern art meets Basque masterpiece at the Guggenheim Museum
-33	Lyle's	London	UK	51.523764	-0.076932	1	James Lowe	https://www.lyleslondon.com/	65	GBP	The epitome of Modern British food in an historic location
-34	Don Julio	Buenos Aires	Argentina	-34.5862	-58.4244	NA	Pablo Jesus Rivero with Guido Tassi	http://www.parrilladonjulio.com/	50	USD	Traditional steakhouse showing diners what the real Argentine asado is all about
-35	Atelier Crenn	San Francisco	USA	37.79837	-122.436045	3	Dominique Crenn	https://www.ateliercrenn.com/	335	USD	Poetry-led cuisine from one of San Franciscoís most celebrated chefs
-36	Le Bernardin	New York	USA	40.761403	-73.981719	3	Eric Ripert	https://www.le-bernardin.com/	210	USD	Fish-forward superlative French fine dining
-37	Alinea                 	Chicago	USA	41.913	-87.65	3	Grant Achatz with Simon Davies	https://www.alinearestaurant.com/	365	USD	Artistic modernist cuisine built from the worldís best luxury ingredients
-38	Hiöa Franko	Kobarid	Slovenia	46.247004	13.53643	2	Ana Roö	https://www.hisafranko.com/	175	EUR	Sloveniaís top chef serves superlative local produce in a stunning home-from-home setting
-39	A Casa do Porco	Sao Paulo	Brazil	-23.545	-46.646	0	Jefferson Rueda	https://acasadoporco.com.br/	139	BRL	An homage to the hog from S„o Pauloís most creative husband-and-wife team
-40	Restaurant Tim Raue	Berlin	Germany	52.52045	13.40732	2	Tim Raue	https://tim-raue.com/	218	EUR	Asian-tinted perfection from the charismatic Berlin chef
-41	The Chairman	Hong Kong	Hong Kong	22.2846	114.1505	0	Kwok Keung Tung with Danny Yip	http://www.thechairmangroup.com/	700	HKD	"Seasonal, ingredient-driven Cantonese cuisine served in an unassuming townhouse"
-42	Belcanto	Lisbon	Portugal	38.71001	-9.14143	2	JosÈ Avillez	https://belcanto.pt/index.php	185	EUR	Letting Lisbonís true culinary colours show
-43	Hof Van Cleve                  	Kruisem	Belgium	50.90357	3.509568	3	Peter Goossens	https://hofvancleve.com/	345	EUR	Pitch-perfect plates in pastoral surrounds by the patriarch of modern Belgian cuisine
-44	The Test Kitchen	Cape Town	South Africa	-33.927582	18.457066	NA	Luke Dale-Roberts	https://www.thetestkitchen.co.za/	895	ZAR	"A treat for the senses with light and dark melding perfectly in a quirky, industrial space"
-45	S¸hring	Bangkok	Thailand	13.7108	100.5432	2	Thomas and Mathias S¸hring	http://restaurantsuhring.com/	5000	THB	Cool and collected contemporary German cuisine in bustling Bangkok
-46	De Librije	Zwolle	The Netherlands	52.515365	6.097879	3	Jonnie Boer	https://www.librije.com/	253	EUR	Charismatic duo serving modern Dutch food in a former prison
-47	Benu                               	San Francisco	USA	37.785436	-122.399214	3	Corey Lee	https://www.benusf.com/	325	USD	A sophisticated confluence of culinary cultures from a chef at the top of his game
-48	Ultraviolet by Paul Pairet	Shanghai	China	31.246027	121.472	3	Paul Pairet	https://uvbypp.cc/	600	USD	"The ultimate in immersive, multi-sensory dining"
-49	Leo	Bogot‡	Colombia	4.60971	-74.08175	NA	Leonor Espinosa	http://www.restauranteleo.com/	100	USD	Inventive and perfectly presented Colombian cuisine in a relaxed setting
-50	Schloss Schauenstein	Furstenau	Switzerland	46.722102	9.448301	3	Andreas Caminada	https://schauenstein.ch/	270	CHF	A fairy tale dining experience built on the foundations of Swiss hospitality
+Ranking	Restaurant	City	Country	Lat	Lon	Stars	Chef	Website	Menu	Currency	Description
+
+1	Mirazur        	Menton	France	43.785882	7.527998	3	Mauro Colagreco	https://www.mirazur.fr/	320	EUR	Argentina‚Äôs prime culinary export serves exquisite seasonal food on the C√¥te d‚ÄôAzur
+
+2	Noma                                         	Copenhagen	Denmark	55.683153	12.610426	2	Ren√© Redzepi	https://noma.dk/	2800	DKK	The restaurant that coined New Nordic cuisine is reborn with a more daring attitude than ever
+
+3	Etxebarri	Axpe	Spain	43.11587	-2.6006578	1	Victor Arguinzoniz	https://asadoretxebarri.com/	200	EUR	"Minimalist, accurate and artful grill cookery with premier Basque ingredients"
+
+4	Gaggan Anand                 	Bangkok	Thailand	13.73919	100.53744	NA	Gaggan Anand	https://gaggananand.com/	8000	THB	"A colourful, emoji-led feast from Asia‚Äôs unstoppable chef"
+
+5	Geranium	Copenhagen	Denmark	55.703755	12.572072	3	Rasmus Kofoed	https://www.geranium.dk/en/	2800	DKK	"Detailed, artful plates that celebrate Scandinavia‚Äôs best seasonal ingredients"
+
+6	Central	Lima	Peru	-12.0993	-77.065	NA	Virgilio Mart√≠nez and P√≠a Le√≥n	https://www.centralrestaurante.com.pe/	480	PEN	A showcase of colour and diversity from all over Peru
+
+7	Mugaritz	San Sebastian	Spain	43.314798	-1.974583	2	Andoni Luis Aduriz	https://www.mugaritz.com/	220	EUR	A string of innovative creations to challenge diners‚Äô conceptions in the Basque country‚Äôs heart
+
+8	Arp√®ge	Paris	France	48.855703	2.317101	3	Alain Passard	https://www.alain-passard.com/	420	EUR	Vegetables are given a chance to shine under the direction of a true French master
+
+9	Disfrutar	Barcelona	Spain	41.387762	2.153172	2	Mateu Casa√±as	http://www.disfrutarbarcelona.com/	195	EUR	A host of brilliantly conceived surprises delivered with panache and bags of flavour
+
+10	Maido	Lima	Peru	-12.04318	-77.02824	NA	Mitsuharu Tsumura and Cesar Choy	http://maido.pe/	349	PEN	Lima favourite fuses Japanese and Peruvian cuisine to brilliant effect
+
+11	Den	Tokyo	Japan	35.670289	139.696816	NA	Zaiyu Hasegawa	http://www.jimbochoden.com/	17000	JPY	"Japanese cuisine with quality, creativity and a warm welcome (plus an ant or two)"
+
+12	Pujol	Mexico City	Mexico	19.371422	-99.150344	NA	Enrique Olvera	https://www.pujol.com.mx/	2500	MXN	Mexico‚Äôs most famous chef filters his country‚Äôs deep-rooted cuisine through a contemporary lens
+
+13	White Rabbit	Moscow	Russia	55.741469	37.615561	NA	Vladimir Mukhin	https://whiterabbitmoscow.ru/en/	11000	RUB	Boundless creativity with Russian ingredients from Moscow‚Äôs most famous chef
+
+14	Azurmendi	Larrabetzu	Spain	43.26594	-2.8187452	3	Eneko Atxa	https://www.azurmendi.biz/	250	EUR	Innovative cuisine with sustainability at heart
+
+15	Septime	Paris	France	48.853604	2.380832	1	Bertrand Gr√©baut 	http://www.septime-charonne.fr/	95	EUR	Explosive flavours and unsung ingredient mashups thrive at this hip neo-bistro
+
+16	Alain Ducasse au Plaza Ath√©n√©e	Paris	France	48.866175	2.304268	3	Alain Ducasse with Romain Meder	https://www.dorchestercollection.com/en/paris/hotel-plaza-athenee/restaurants-bars/alain-ducasse-au-plaza-athenee/	395	EUR	One of France‚Äôs iconic chefs defines his concept of ‚Äúnaturalness‚Äù in an opulent dining room
+
+17	Steirereck	Vienna	Austria	48.198674	16.348388	2	Heinz Reitbauer	https://www.steirereck.at/en/restaurant/	169	EUR	A futuristic setting showcasing trailblazing Austrian cuisine
+
+18	Odette	Singapore	Singapore	1.289739	103.851368	3	Julien Royer	https://www.odetterestaurant.com/	358	SGD	Ultra-refined French dining from a new-generation French chef in Asia
+
+19	Twins Garden	Moscow	Russia	55.741469	37.615561	NA	Ivan and Sergey Berezutski	http://twinsgarden.ru/en/	8000	RUB	Superlative home-grown produce presented by Russia‚Äôs most talented twins
+
+20	Tickets	Barcelona	Spain	41.375217	2.156968	1	Fran Agudo	https://elbarri.com/en/restaurant/tickets/	70	EUR	"A carnival of playful tapas delights, where not every bite is as it seems"
+
+21	Frantz√©n	Stockholm	Sweden	59.333854	18.058519	3	Bjorn Frantz√©n	https://www.restaurantfrantzen.com/	3500	SEK	The return of Stockholm‚Äôs most creative cook sees a brand-new space and experiential menus
+
+22	Narisawa	Tokyo	Japan	35.692709	139.699506	NA	Yoshihiro Narisawa	http://www.narisawa-yoshihiro.com/	38500	JPY	Yoshihiro Narisawa brings nature to the plate via innovative Satoyama cuisine
+
+23	Cosme                  	New York	USA	40.8332	-73.40832	0	Daniela Soto-Innes	https://www.cosmenyc.com/	98	USD	Original Mexican-inspired cuisine from The World‚Äôs Best Female Chef 2019
+
+24	Quintonil	Mexico City	Mexico	19.4308	-99.150344	NA	Jorge Vallejo	http://www.quintonil.com/en/	2400	MXN	A taste of pure Mexico from a talented young chef
+
+25	All√©no Paris au Pavillon Ledoyen	Paris	France	48.866061	2.315677	3	Yannick All√©no	http://www.yannick-alleno.com/	395	EUR	A tour de force of boundary pushing technique in historic Parisian surrounds
+
+26	Borag√≥	Santiago	Chile	-33.428532	-70.630133	NA	Rodolfo Guzm√°n	https://www.borago.cl/	85000	CLP	Zero-kilometre sourcing and indigenous ingredients set apart this Chilean showstopper
+
+27	The Clove Club	London	UK	51.527045	-0.07915	1	Isaac McHale	https://thecloveclub.com/	145	GBP	Delicious British cuisine from a talented kitchen and dining room trio
+
+28	Blue Hill at Stone Barns	Tarrytown	USA	41.10208	-73.8289	2	Dan Barber	https://www.bluehillfarm.com/	195	USD	Dan Barber‚Äôs progressive rural farm-restaurant serving sustainable cuisine
+
+29	Piazza Duomo	Alba	Italy	44.700554	8.035567	3	Enrico Crippa	https://www.piazzaduomoalba.it/it/	300	EUR	"Inventive, artistic Italian dishes matched with superb wines in truffle country"
+
+30	Elkano	Getaria	Spain	43.303043	-2.205062	1	Aitor Arregi with Pablo Vicari	https://www.restauranteelkano.com/	110	EUR	A near-perfect example of an authentic Basque asador
+
+31	Le Calandre	Rubano	Italy	45.426347	11.790589	3	Massimiliano Alajmo	https://www.alajmo.it/it/sezione/le-calandre/le-calandre	240	EUR	Contemporary Italian cuisine at a detail-driven restaurant
+
+32	Nerua Guggenheim Bilbao	Bilbao	Spain	43.258534	-2.937123	1	Josean Alija	https://www.neruaguggenheimbilbao.com/	148	EUR	Modern art meets Basque masterpiece at the Guggenheim Museum
+
+33	Lyle's	London	UK	51.523764	-0.076932	1	James Lowe	https://www.lyleslondon.com/	65	GBP	The epitome of Modern British food in an historic location
+
+34	Don Julio	Buenos Aires	Argentina	-34.5862	-58.4244	NA	Pablo Jesus Rivero with Guido Tassi	http://www.parrilladonjulio.com/	50	USD	Traditional steakhouse showing diners what the real Argentine asado is all about
+
+35	Atelier Crenn	San Francisco	USA	37.79837	-122.436045	3	Dominique Crenn	https://www.ateliercrenn.com/	335	USD	Poetry-led cuisine from one of San Francisco‚Äôs most celebrated chefs
+
+36	Le Bernardin	New York	USA	40.761403	-73.981719	3	Eric Ripert	https://www.le-bernardin.com/	210	USD	Fish-forward superlative French fine dining
+
+37	Alinea                 	Chicago	USA	41.913	-87.65	3	Grant Achatz with Simon Davies	https://www.alinearestaurant.com/	365	USD	Artistic modernist cuisine built from the world‚Äôs best luxury ingredients
+
+38	Hi≈°a Franko	Kobarid	Slovenia	46.247004	13.53643	2	Ana Ro≈°	https://www.hisafranko.com/	175	EUR	Slovenia‚Äôs top chef serves superlative local produce in a stunning home-from-home setting
+
+39	A Casa do Porco	Sao Paulo	Brazil	-23.545	-46.646	0	Jefferson Rueda	https://acasadoporco.com.br/	139	BRL	An homage to the hog from S√£o Paulo‚Äôs most creative husband-and-wife team
+
+40	Restaurant Tim Raue	Berlin	Germany	52.52045	13.40732	2	Tim Raue	https://tim-raue.com/	218	EUR	Asian-tinted perfection from the charismatic Berlin chef
+
+41	The Chairman	Hong Kong	Hong Kong	22.2846	114.1505	0	Kwok Keung Tung with Danny Yip	http://www.thechairmangroup.com/	700	HKD	"Seasonal, ingredient-driven Cantonese cuisine served in an unassuming townhouse"
+
+42	Belcanto	Lisbon	Portugal	38.71001	-9.14143	2	Jos√© Avillez	https://belcanto.pt/index.php	185	EUR	Letting Lisbon‚Äôs true culinary colours show
+
+43	Hof Van Cleve                  	Kruisem	Belgium	50.90357	3.509568	3	Peter Goossens	https://hofvancleve.com/	345	EUR	Pitch-perfect plates in pastoral surrounds by the patriarch of modern Belgian cuisine
+
+44	The Test Kitchen	Cape Town	South Africa	-33.927582	18.457066	NA	Luke Dale-Roberts	https://www.thetestkitchen.co.za/	895	ZAR	"A treat for the senses with light and dark melding perfectly in a quirky, industrial space"
+
+45	S√ºhring	Bangkok	Thailand	13.7108	100.5432	2	Thomas and Mathias S√ºhring	http://restaurantsuhring.com/	5000	THB	Cool and collected contemporary German cuisine in bustling Bangkok
+
+46	De Librije	Zwolle	The Netherlands	52.515365	6.097879	3	Jonnie Boer	https://www.librije.com/	253	EUR	Charismatic duo serving modern Dutch food in a former prison
+
+47	Benu                               	San Francisco	USA	37.785436	-122.399214	3	Corey Lee	https://www.benusf.com/	325	USD	A sophisticated confluence of culinary cultures from a chef at the top of his game
+
+48	Ultraviolet by Paul Pairet	Shanghai	China	31.246027	121.472	3	Paul Pairet	https://uvbypp.cc/	600	USD	"The ultimate in immersive, multi-sensory dining"
+
+49	Leo	Bogot√†	Colombia	4.60971	-74.08175	NA	Leonor Espinosa	http://www.restauranteleo.com/	100	USD	Inventive and perfectly presented Colombian cuisine in a relaxed setting
+
+50	Schloss Schauenstein	Furstenau	Switzerland	46.722102	9.448301	3	Andreas Caminada	https://schauenstein.ch/	270	CHF	A fairy tale dining experience built on the foundations of Swiss hospitality
